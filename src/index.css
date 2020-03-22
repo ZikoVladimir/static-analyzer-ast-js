@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "FS Lucas-Regular";
+  src: url(fonts/FSLucasWeb-Regular.woff);
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "FS Lucas-Bold";
+  src: url(fonts/FSLucasWeb-Bold.woff);
+  font-display: fallback;
+}
+
+* {
+  font-family: "FS Lucas-Regular", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

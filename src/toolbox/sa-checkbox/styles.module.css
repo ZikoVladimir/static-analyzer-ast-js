@@ -1,0 +1,56 @@
+@value DISABLED, NORMAL, HOVER, FOCUS, ACTIVE from "../../colors.css";
+
+.checkbox-container {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  padding-left: 30px;
+
+  cursor: pointer;
+}
+
+.label {
+  text-align: center;
+}
+
+.checkbox {
+  position: absolute;
+  -webkit-appearance: none;
+}
+
+.custom-checkbox {
+  position: absolute;
+  left: 0;
+
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+  border: 2px solid NORMAL;
+}
+
+.checkbox:checked + .custom-checkbox {
+  background-color: NORMAL;
+  background-image: url("./img/tick.svg");
+}
+
+.checkbox:focus + .custom-checkbox {
+  border-color: FOCUS;
+}
+
+.checkbox:checked:focus + .custom-checkbox {
+  border-color: FOCUS;
+  background-color: FOCUS;
+}
+
+.checkbox:disabled + .custom-checkbox {
+  border-color: DISABLED;
+}
+
+.checkbox:checked:disabled + .custom-checkbox {
+  border-color: DISABLED;
+  background-color: DISABLED;
+}

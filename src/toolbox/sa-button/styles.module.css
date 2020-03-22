@@ -1,0 +1,37 @@
+@value DISABLED, NORMAL, HOVER, FOCUS, ACTIVE from "../../colors.css";
+
+.button {
+  width: 350px;
+  height: 40px;
+
+  outline: none;
+  border: 2px solid NORMAL;
+  border-radius: 6px;
+  background-color: transparent;
+
+  font-size: 16px;
+  font-family: "FS Lucas-Bold", sans-serif;
+  color: NORMAL;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.button:hover {
+  border-color: HOVER;
+  color: HOVER;
+}
+
+.button:focus {
+  border-color: FOCUS;
+  color: FOCUS;
+}
+
+.button:active {
+  border-color: ACTIVE;
+  color: ACTIVE;
+}
+
+.button:disabled {
+  border-color: DISABLED;
+  color: DISABLED;
+}

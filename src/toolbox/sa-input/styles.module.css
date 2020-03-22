@@ -1,0 +1,28 @@
+@value DISABLED, NORMAL, HOVER, FOCUS from "../../colors.css";
+
+.input {
+  box-sizing: border-box;
+  padding: 15px 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 350px;
+  height: 40px;
+
+  border: 2px solid NORMAL;
+  border-radius: 6px;
+  outline: none;
+
+  font-size: 16px;
+}
+
+.input:hover {
+  border-color: HOVER;
+}
+
+.input:focus {
+  border-color: FOCUS;
+}
+
+.input:disabled {
+  border-color: DISABLED;
+}
