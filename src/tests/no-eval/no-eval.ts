@@ -9,7 +9,7 @@ export class NoEval {
     const lineNumberList = getLineNumberList(ast);
 
     return lineNumberList.map(line => {
-      return `WARNING: usage eval() in "${line}"`;
+      return `WARNING: usage eval in row "${line}"`;
     });
   }
 }
