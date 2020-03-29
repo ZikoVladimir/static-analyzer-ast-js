@@ -3,7 +3,7 @@ import traverse from '@babel/traverse';
 
 const findEvalInArguments = argumentList => argumentList.find(arg => type.isIdentifier(arg, { name: 'eval' }));
 
-export function getLineNumberList(ast): string[] {
+export const getLineNumberList = (ast): string[] => {
   const lineNumberList: string[] = [];
 
   traverse(ast, {
@@ -21,4 +21,4 @@ export function getLineNumberList(ast): string[] {
   });
 
   return lineNumberList;
-}
+};
