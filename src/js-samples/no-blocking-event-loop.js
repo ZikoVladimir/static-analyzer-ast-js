@@ -43,7 +43,9 @@ if (request.status === 200) {
 
 jQuery.ajax({
   url: 'https://api.github.com/users',
-  success: function(response) {},
+  success: function(response) {
+    alert(response);
+  },
   async: false
 });
 
