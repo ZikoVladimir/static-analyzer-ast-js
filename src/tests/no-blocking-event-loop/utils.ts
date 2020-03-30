@@ -3,12 +3,11 @@ import traverse from '@babel/traverse';
 
 export const getLineNumberList = (ast): string[] => {
   const lineNumberList: string[] = [];
-
-  let declaratorList: string[] = [];
+  const declaratorList: string[] = [];
 
   traverse(ast, {
     VariableDeclaration(path) {
-      declaratorList = [...declaratorList ,...getXhrDeclaratorList(path.node)];
+      getXhrDeclaratorList(path.node).forEach(variable => declaratorList.push(variable));
     }
   });
 
@@ -44,13 +43,11 @@ function findAsyncProperty(properties): boolean {
   });
 }
 
-// todo: refactor
-
 function getXhrDeclaratorList(node): string[] {
   return node.declarations
     .filter(declarator => {
       return type.isNewExpression(declarator.init) &&
-        type.isIdentifier(declarator.init.callee, { name: 'XMLHttpRequest' })
+        type.isIdentifier(declarator.init.callee, { name: 'XMLHttpRequest' });
     })
     .map(declarator => declarator.id.name);
 }
