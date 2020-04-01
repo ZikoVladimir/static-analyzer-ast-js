@@ -1,5 +1,7 @@
 /**
  *
+ * Link: https://developer.mozilla.org/ru/docs/XMLHttpRequest
+ *
  * Javascript is a single threaded language.
  * It is interpreted by various engines, the most famous of which is V8 used in Chrome and Node.
  * However, the engine is really only doing a couple of things.
@@ -15,8 +17,6 @@
  * and keep them from working on other clients. This would be a Denial of Service attack.
  *
  **/
-
-/** Example #1 **/
 
 /**
  *
@@ -49,17 +49,4 @@ jQuery.ajax({
   async: false
 });
 
-
-/** Example #2 **/
-
-/**
- *
- * The Window.alert() method displays an alert dialog
- * with the optional specified content and an OK button.
- *
- **/
-
 /** MAIN CODE **/
-
-window.alert("I'm blocking event loop right now");
-alert("You need to press the 'OK' button to unlock event-loop");

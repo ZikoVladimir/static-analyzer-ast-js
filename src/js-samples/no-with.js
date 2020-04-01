@@ -1,7 +1,12 @@
 /**
  *
- * WITH statements result in potentially confusing implicit bindings,
- * and may behave strangely in setting new variables.
+ * Name: With statement
+ * Description: The 'with' statement has subtle semantics and should not be used.
+ * ID: js/with-statement
+ * Kind: problem
+ * Severity: warning
+ * Precision: very-high
+ * Link: https://help.semmle.com/wiki/display/JS/With+statement
  *
  **/
 
@@ -13,7 +18,7 @@ const user = {
   gender: 'male'
 };
 
-const mockMD5 = password => `${password}q1r3t4ty53gg532f23`;
+const mockMD5 = password => `return hash password`;
 
 const createPassword = user => {
   with(user){
@@ -22,3 +27,5 @@ const createPassword = user => {
 };
 
 createPassword(user);
+
+/** MAIN CODE **/

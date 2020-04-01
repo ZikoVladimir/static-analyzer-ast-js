@@ -1,13 +1,13 @@
 import traverse from '@babel/traverse';
 
-export const getLineNumberList = (ast): string[] => {
-  const lineNumberList: string[] = [];
+export const getResult = (ast): number[] => {
+  const result: number[] = [];
 
   traverse(ast, {
     WithStatement(path) {
-      lineNumberList.push(path.node.loc.start.line);
+      result.push(path.node.loc.start.line);
     }
   });
 
-  return lineNumberList;
+  return result;
 };

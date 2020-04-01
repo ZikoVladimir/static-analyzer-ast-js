@@ -1,15 +1,15 @@
 import * as babylon from '@babel/parser';
-import { getLineNumberList } from './utils';
+import { getResult } from './utils';
 
 export class NoWith {
   static NAME = 'no-with';
 
   static analyze(code: string): string[] {
     const ast = babylon.parse(code);
-    const lineNumberList = getLineNumberList(ast);
+    const result = getResult(ast);
 
-    return lineNumberList.map(line => {
-      return `WARNING: unexpected With statement in row "${line}"`;
+    return result.map(line => {
+      return `WARNING: Unexpected WithStatement in row "${line}"`;
     });
   }
 }

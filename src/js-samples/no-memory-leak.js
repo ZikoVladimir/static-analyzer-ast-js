@@ -1,5 +1,7 @@
 /**
  *
+ * Link: https://auth0.com/blog/four-types-of-leaks-in-your-javascript-code-and-how-to-get-rid-of-them/
+ *
  * Memory leaks are a problem every developer has to face eventually.
  * Even when working with memory-managed languages there are cases where memory can be leaked.
  * Leaks are the cause of whole class of problems:
@@ -7,9 +9,11 @@
  *
  **/
 
-/** Example #1 **/
+/** Case #1 **/
 
 /** MAIN CODE **/
+
+"use strict"
 
 function foo(arg) {
   bar = "this is a hidden global variable";
@@ -21,7 +25,9 @@ function foo(arg) {
 
 foo();
 
-/** Example #2 **/
+/** MAIN CODE **/
+
+/** Case #2 **/
 
 /** MAIN CODE **/
 
@@ -32,7 +38,11 @@ function setText(event) {
   element.innerHtml = input.value;
 }
 
+// INCORRECT
 element.addEventListener('click', setText);
 
+// CORRECT
 document.getElementById('submit').addEventListener('click', setText);
 document.getElementById('submit').removeEventListener('click', setText);
+
+/** MAIN CODE **/

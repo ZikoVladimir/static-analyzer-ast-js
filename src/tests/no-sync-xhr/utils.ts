@@ -1,39 +1,29 @@
 import * as type from '@babel/types';
 import traverse from '@babel/traverse';
 
-export const getLineNumberList = (ast): string[] => {
-  const lineNumberList: string[] = [];
+export const getResult = (ast): number[] => {
+  const result: number[] = [];
   const declaratorList: string[] = [];
 
   traverse(ast, {
     VariableDeclaration(path) {
       getXhrDeclaratorList(path.node).forEach(variable => declaratorList.push(variable));
+    },
+
+    MemberExpression(path) {
+      if (findSyncAjax(path) || findSyncXhr(path, declaratorList)) {
+        result.push(path.node.loc.start.line);
+      }
     }
   });
 
-  traverse(ast, {
-    MemberExpression(path) {
-      if (type.isIdentifier(path.node.property, { name: 'alert' }) &&
-        type.isIdentifier(path.node.object, { name: 'window' }) ||
-        findSyncAjax(path) || findSyncXhr(path, declaratorList)) {
-        lineNumberList.push(path.node.loc.start.line);
-      }
-    },
-    CallExpression(path) {
-      if (type.isIdentifier(path.node.callee, { name: 'alert' })) {
-        lineNumberList.push(path.node.loc.start.line);
-      }
-    },
-  });
-
-  return lineNumberList;
+  return result;
 };
 
 function findSyncAjax(path): boolean {
   return type.isIdentifier(path.node.object, { name: 'jQuery' }) &&
     type.isIdentifier(path.node.property, { name: 'ajax' }) &&
-    path.parent.arguments &&
-    path.parent.arguments.find(arg => findAsyncProperty(arg.properties));
+    path.parent.arguments && path.parent.arguments.find(arg => findAsyncProperty(arg.properties));
 }
 
 function findAsyncProperty(properties): boolean {

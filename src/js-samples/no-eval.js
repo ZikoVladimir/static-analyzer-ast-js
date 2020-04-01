@@ -1,21 +1,32 @@
 /**
  *
- * JavaScript's eval() function is potentially dangerous and is often misused.
- * Using eval() on untrusted code can open a program up to several different injection attacks.
- * The use of eval() in most contexts can be substituted for a better, alternative approach to a problem.
+ * Name: Code injection
+ * Description: Interpreting unsanitized user input as code allows a malicious user arbitrary code execution.
+ * ID: js/code-injection
+ * Kind: path-problem
+ * Severity: error
+ * Precision: high
+ * Link: https://help.semmle.com/wiki/display/JS/Code+injection
+ *
+ * Name: Use of eval
+ * Description: The 'eval' function and the 'Function' constructor execute strings as code.
+ *              This is dangerous and impedes program analysis and understanding.
+ *              Consequently, these two functions should not be used.
+ * ID: js/eval-call
+ * Kind: problem
+ * Severity: recommendation
+ * Precision: medium
+ * Link: https://help.semmle.com/wiki/display/JS/Use+of+eval
  *
  **/
 
-/** Example #1 * */
+/** Case #1 * */
 const valueFromInput = `require("child_process").exec('rm -rf ./*')`;
-
-/** Example #2 * */
+/** Case #2 * */
 const valueFromInput_2 = `for(;;) {}`;
-
-/** Example #3 * */
+/** Case #3 * */
 const valueFromInput_3 = `alert(document.cookie)`;
-
-/** Example #4 * */
+/** Case #4 * */
 const valueFromInput_4 = `location.href = 'http://hacker.com'`;
 
 /** MAIN CODE **/
@@ -26,14 +37,4 @@ const submit = document.querySelector('button');
 
 submit.addEventListener('click', () => eval(input.value));
 
-/**
- *
- * Possible cases:
- *
- * 1. CallExpression: eval(...);
- *
- * 2. MemberExpression: window.eval, global.eval, this.eval, etc;
- *
- * 3. Eval in Arguments: inputValueList.forEach(eval).
- *
- * */
+/** MAIN CODE **/

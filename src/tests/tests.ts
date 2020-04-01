@@ -1,6 +1,6 @@
 import { NoEval } from './no-eval/no-eval';
 import { NoWith } from './no-with/no-with';
-import { NoBlockingEventLoop } from './no-blocking-event-loop/no-blocking-event-loop';
+import { NoSyncXhr } from './no-sync-xhr/no-sync-xhr';
 import { NoMemoryLeak } from './no-memory-leak/no-memory-leak';
 
 export const tests: Test[] = [
@@ -15,8 +15,8 @@ export const tests: Test[] = [
     shouldPerform: true
   },
   {
-    name: NoBlockingEventLoop.NAME,
-    analyze: NoBlockingEventLoop.analyze,
+    name: NoSyncXhr.NAME,
+    analyze: NoSyncXhr.analyze,
     shouldPerform: true
   },
   {
