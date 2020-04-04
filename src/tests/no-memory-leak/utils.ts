@@ -27,7 +27,6 @@ export const getResult = (ast): number[] => {
   }
 
   let listenerList: Listener[] = [];
-  let list = [];
 
   traverse(ast, {
     MemberExpression(path) {
@@ -58,10 +57,7 @@ export const getResult = (ast): number[] => {
     },
   });
 
-  console.log(list);
-  listenerList.forEach(item => result.push(item.line));
-
-  return result;
+  return [...result, ...listenerList.map(item => item.line)];
 };
 
 function getNameVariable(node): string[] {
