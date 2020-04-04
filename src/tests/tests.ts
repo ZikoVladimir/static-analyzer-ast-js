@@ -3,6 +3,7 @@ import { NoWith } from './no-with/no-with';
 import { NoSyncXhr } from './no-sync-xhr/no-sync-xhr';
 import { NoMemoryLeak } from './no-memory-leak/no-memory-leak';
 import { NoImpliedEval } from './no-implied-eval/no-implied-eval';
+import { NoXpathInjection } from './no-xpath-injection/no-xpath-injection';
 
 export const tests: Test[] = [
   {
@@ -28,6 +29,11 @@ export const tests: Test[] = [
   {
     name: NoImpliedEval.NAME,
     analyze: NoImpliedEval.analyze,
+    shouldPerform: true
+  },
+  {
+    name: NoXpathInjection.NAME,
+    analyze: NoXpathInjection.analyze,
     shouldPerform: true
   }
 ];
