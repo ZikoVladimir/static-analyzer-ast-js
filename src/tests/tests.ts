@@ -5,6 +5,7 @@ import { NoMemoryLeak } from './no-memory-leak/no-memory-leak';
 import { NoImpliedEval } from './no-implied-eval/no-implied-eval';
 import { NoXpathInjection } from './no-xpath-injection/no-xpath-injection';
 import { NoModuleLoadingUsingAVariable } from './no-module-loading-using-a-variable/no-module-loading-using-a-variable';
+import { NoWeakCryptographicAlgorithm } from './no-weak-cryptographic-algorithm/no-weak-cryptographic-algorithm';
 
 export const tests: Test[] = [
   {
@@ -40,6 +41,11 @@ export const tests: Test[] = [
   {
     name: NoModuleLoadingUsingAVariable.NAME,
     analyze: NoModuleLoadingUsingAVariable.analyze,
+    shouldPerform: true
+  },
+  {
+    name: NoWeakCryptographicAlgorithm.NAME,
+    analyze: NoWeakCryptographicAlgorithm.analyze,
     shouldPerform: true
   }
 ];
