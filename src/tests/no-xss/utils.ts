@@ -6,7 +6,6 @@ export const getResult = (ast): number[] => {
 
   traverse(ast, {
     CallExpression(path) {
-      console.log(path.node.arguments[0]);
       if (type.isMemberExpression(path.node.callee)
         && type.isIdentifier(path.node.callee.object, { name: 'document' })
         && type.isIdentifier(path.node.callee.property, { name: 'write' })

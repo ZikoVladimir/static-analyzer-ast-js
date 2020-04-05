@@ -7,6 +7,7 @@ import { NoXpathInjection } from './no-xpath-injection/no-xpath-injection';
 import { NoModuleLoadingUsingAVariable } from './no-module-loading-using-a-variable/no-module-loading-using-a-variable';
 import { NoWeakCryptographicAlgorithm } from './no-weak-cryptographic-algorithm/no-weak-cryptographic-algorithm';
 import { NoXss } from './no-xss/no-xss';
+import { NoUnmatchableDollarInRegexp } from './no-unmatchable-dollar-in-regexp/no-unmatchable-dollar-in-regexp';
 
 export const tests: Test[] = [
   {
@@ -52,6 +53,11 @@ export const tests: Test[] = [
   {
     name: NoXss.NAME,
     analyze: NoXss.analyze,
+    shouldPerform: true
+  },
+  {
+    name: NoUnmatchableDollarInRegexp.NAME,
+    analyze: NoUnmatchableDollarInRegexp.analyze,
     shouldPerform: true
   }
 ];
