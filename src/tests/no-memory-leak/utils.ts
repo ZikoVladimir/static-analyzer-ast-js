@@ -39,7 +39,7 @@ export const getResult = (ast): number[] => {
       }
 
       if (type.isIdentifier(path.node.property, { name: 'addEventListener' }) &&
-        type.isCallExpression(path.node.object)) {
+        type.isCallExpression(path.node.object) && path.node.object.arguments && path.node.object.arguments.length) {
         listenerList.push({
           name: `${path.node.object.callee.property}('${path.node.object.arguments[0].value}')`,
           line: path.node.loc.start.line
@@ -47,11 +47,11 @@ export const getResult = (ast): number[] => {
       }
 
       if (type.isIdentifier(path.node.property, { name: 'removeEventListener' }) &&
-        type.isCallExpression(path.node.object)) {
+        type.isCallExpression(path.node.object) && path.node.object.arguments && path.node.object.arguments.length) {
         listenerList = listenerList.filter(item => item.name !== `${path.node.object.callee.property}('${path.node.object.arguments[0].value}')`);
       }
 
-      if (type.isIdentifier(path.node.property, { name: 'removeEventListener' })) {
+      if (type.isIdentifier(path.node.property, { name: 'removeEventListener' }) && path.node.object) {
         listenerList = listenerList.filter(item => item.name !== path.node.object.name);
       }
     },
@@ -61,7 +61,7 @@ export const getResult = (ast): number[] => {
 };
 
 function getNameVariable(node): string[] {
-  return node.declarations.map(declarator => declarator.id.name);
+  return node.declarations.map(declarator => declarator.id && declarator.id.name);
 }
 
 function checkUseStrict(ast): boolean {

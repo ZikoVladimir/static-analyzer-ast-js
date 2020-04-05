@@ -23,7 +23,8 @@ export const getResult = (ast): number[] => {
 function findSyncAjax(path): boolean {
   return type.isIdentifier(path.node.object, { name: 'jQuery' }) &&
     type.isIdentifier(path.node.property, { name: 'ajax' }) &&
-    path.parent.arguments && path.parent.arguments.find(arg => findAsyncProperty(arg.properties));
+    path.parent.arguments && path.parent.arguments.length
+    && path.parent.arguments.find(arg => findAsyncProperty(arg.properties));
 }
 
 function findAsyncProperty(properties): boolean {
@@ -37,7 +38,7 @@ function getXhrDeclaratorList(node): string[] {
   return node.declarations
     .filter(declarator => {
       return type.isNewExpression(declarator.init) &&
-        type.isIdentifier(declarator.init.callee, { name: 'XMLHttpRequest' });
+        type.isIdentifier(declarator.init.callee, { name: 'XMLHttpRequest' }) && declarator.id;
     })
     .map(declarator => declarator.id.name);
 }
@@ -45,7 +46,7 @@ function getXhrDeclaratorList(node): string[] {
 function findSyncXhr(path, declaratorList: string[]): boolean {
   return checkDeclaratorList(declaratorList, path.node.object.name) &&
     type.isIdentifier(path.node.property, { name: 'open' }) &&
-    path.parent.arguments && path.parent.arguments.length >= 2 &&
+    path.parent.arguments && path.parent.arguments.length >= 3 &&
     type.isLiteral(path.parent.arguments[2], { value: false });
 }
 

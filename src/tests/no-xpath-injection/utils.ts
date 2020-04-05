@@ -9,11 +9,10 @@ export const getResult = (ast): number[] => {
   if (xpathName) {
     traverse(ast, {
       CallExpression(path) {
-        console.log(path);
         if (type.isMemberExpression(path.node.callee)
           && type.isIdentifier(path.node.callee.object, { name: xpathName })
           && type.isIdentifier(path.node.callee.property, { name: 'parse' })
-          && (type.isBinaryExpression(path.node.arguments[0])
+          && path.node.arguments && path.node.arguments.length && (type.isBinaryExpression(path.node.arguments[0])
             || type.isTemplateLiteral(path.node.arguments[0])
             && path.node.arguments[0].expressions.length)) {
           result.push(path.node.loc.start.line);
@@ -32,6 +31,7 @@ function getXpathName(ast): string {
     VariableDeclarator(path) {
       if (type.isCallExpression(path.node.init)
         && type.isIdentifier(path.node.init.callee, { name: 'require' })
+        && path.node.init.arguments && path.node.init.arguments.length
         && type.isStringLiteral(path.node.init.arguments[0], { value: 'xpath' })) {
         xpathName = path.node.id.name;
       }

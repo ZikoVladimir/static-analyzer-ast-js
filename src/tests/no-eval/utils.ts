@@ -14,7 +14,7 @@ export const getResult = (ast): number[] => {
     },
     CallExpression(path) {
       if (type.isIdentifier(path.node.callee, { name: 'eval' }) ||
-        (path.node.arguments && findEvalInArguments(path.node.arguments))) {
+        (path.node.arguments && path.node.arguments.length && findEvalInArguments(path.node.arguments))) {
         result.push(path.node.loc.start.line);
       }
     }

@@ -12,7 +12,7 @@ export const getResult = (ast): number[] => {
           && type.isIdentifier(path.node.callee.object, { name: 'window' })
           && (type.isIdentifier(path.node.callee.property, { name: 'setTimeout' })
             || type.isIdentifier(path.node.callee.property, { name: 'setInterval' }))))
-        && type.isStringLiteral(path.node.arguments[0])) {
+        && path.node.arguments && path.node.arguments.length && type.isStringLiteral(path.node.arguments[0])) {
         result.push(path.node.loc.start.line);
       }
     }
