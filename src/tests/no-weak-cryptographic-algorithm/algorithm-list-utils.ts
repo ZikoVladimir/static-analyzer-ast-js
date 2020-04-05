@@ -1,3 +1,5 @@
+// todo: the list needs to be expanded
+
 export const weakCryptoAlgorithmList: string[] = [
   'md5',
   'sha1',

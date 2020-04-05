@@ -6,6 +6,7 @@ import { NoImpliedEval } from './no-implied-eval/no-implied-eval';
 import { NoXpathInjection } from './no-xpath-injection/no-xpath-injection';
 import { NoModuleLoadingUsingAVariable } from './no-module-loading-using-a-variable/no-module-loading-using-a-variable';
 import { NoWeakCryptographicAlgorithm } from './no-weak-cryptographic-algorithm/no-weak-cryptographic-algorithm';
+import { NoXss } from './no-xss/no-xss';
 
 export const tests: Test[] = [
   {
@@ -46,6 +47,11 @@ export const tests: Test[] = [
   {
     name: NoWeakCryptographicAlgorithm.NAME,
     analyze: NoWeakCryptographicAlgorithm.analyze,
+    shouldPerform: true
+  },
+  {
+    name: NoXss.NAME,
+    analyze: NoXss.analyze,
     shouldPerform: true
   }
 ];
