@@ -5,6 +5,7 @@ type Props = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElemen
 
 export function SAButton(props: Props) {
   const { children, className, ...rest } = props;
+
   return (
     <button className={`${styles.button} ${className}`} {...rest}>{children}</button>
   );

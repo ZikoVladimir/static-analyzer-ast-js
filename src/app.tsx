@@ -33,8 +33,10 @@ function App() {
   const disabled = !shouldPerformAnalysis(testsContext.tests) || !path.value;
   return (
     <TestsContext.Provider value={testsContext}>
-      <Form start={start} path={path.value}
-            disabled={disabled} setPath={path.onChange}/>
+      <Form start={start}
+            path={path.value}
+            disabled={disabled}
+            setPath={path.onChange}/>
       {loader.isVisible && <Loader/>}
       {result.isVisible && <Result count={warningsCount} onClick={closeResultWindow}/>}
     </TestsContext.Provider>

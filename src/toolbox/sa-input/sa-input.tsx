@@ -6,8 +6,11 @@ type InputProps = React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputEle
 
 export function SAInput(props: InputProps) {
   const placeholder = props.placeholder ? props.placeholder.toUpperCase() : undefined;
+
   return (
-    <input className={styles.input} {...props}
-           placeholder={placeholder}/>
+    <input className={styles.input}
+           {...props}
+           placeholder={placeholder}
+    />
   );
 }

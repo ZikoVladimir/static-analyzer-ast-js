@@ -2,7 +2,6 @@
 const electron = window.require('electron').remote;
 const fs = electron.require('fs');
 const path = require('path');
-const { app } = electron.require('electron');
 
 export const fileService = {
   readFile: (path: string): string => {

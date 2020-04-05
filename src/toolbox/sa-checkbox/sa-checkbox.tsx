@@ -12,7 +12,9 @@ export function SACheckbox(props: Props) {
   return (
     <label className={`${styles['checkbox-container']} ${className}`}>
       <input className={styles.checkbox}
-             type="checkbox" {...rest} />
+             type="checkbox"
+             {...rest}
+      />
       <span className={styles['custom-checkbox']}/>
       <span className={styles.label}>{label}</span>
     </label>

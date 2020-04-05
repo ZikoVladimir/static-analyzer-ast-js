@@ -16,8 +16,14 @@ export function Checkboxes() {
     <>
       {
         testsContext.tests.map(test => {
-          return <SACheckbox label={test.name} value={test.name} key={test.name}
-                             checked={test.shouldPerform} className={styles.checkbox} onChange={onClick}/>;
+          return <SACheckbox
+            label={test.name}
+            value={test.name}
+            key={test.name}
+            checked={test.shouldPerform}
+            className={styles.checkbox}
+            onChange={onClick}
+          />;
         })
       }
     </>

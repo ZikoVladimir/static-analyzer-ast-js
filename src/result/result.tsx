@@ -12,7 +12,8 @@ export function Result(props: Props) {
     <div className={styles['result-container']}>
       <div className={styles.result}>
         <span className={styles.row}>Found {props.count} issues</span>
-        <span className={styles.row}>The complete log is located in Desktop/log.txt</span>
+        <span className={styles.row}>The complete log is located in Desktop/logs.txt</span>
+
         <button className={styles.button} onClick={props.onClick}>OK</button>
       </div>
     </div>

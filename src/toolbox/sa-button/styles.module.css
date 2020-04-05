@@ -34,4 +34,5 @@
 .button:disabled {
   border-color: DISABLED;
   color: DISABLED;
+  cursor: not-allowed;
 }

@@ -1,5 +1,6 @@
 declare interface Test {
   name: string;
-  shouldPerform: boolean;
   analyze(file: string): string[];
+  // shouldPerform - whether the test is enabled by default or not
+  shouldPerform: boolean;
 }
