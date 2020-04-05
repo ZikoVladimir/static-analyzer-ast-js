@@ -9,7 +9,8 @@ export class NoMemoryLeak {
     const result = getResult(ast);
 
     return result.map(line => {
-      return `WARNING: Possible memory leak in row "${line}"`;
+      return `WARNING: Possible memory leak in row "${line}"
+          Vulnerability Prevention Recommendations: https://auth0.com/blog/four-types-of-leaks-in-your-javascript-code-and-how-to-get-rid-of-them/`;
     });
   }
 }

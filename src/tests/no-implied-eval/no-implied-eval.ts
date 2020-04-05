@@ -9,7 +9,8 @@ export class NoImpliedEval {
     const result = getResult(ast);
 
     return result.map(line => {
-      return `WARNING: Use of implied eval in row "${line}".`;
+      return `WARNING: Use of implied eval in row "${line}".
+          Vulnerability Prevention Recommendations: https://help.semmle.com/wiki/display/JS/Call+to+eval-like+DOM+function`;
     });
   }
 }

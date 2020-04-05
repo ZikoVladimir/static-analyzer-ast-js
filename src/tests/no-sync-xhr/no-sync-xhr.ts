@@ -9,7 +9,8 @@ export class NoSyncXhr {
     const result = getResult(ast);
 
     return result.map(line => {
-      return `WARNING: Possible blocking event loop in row "${line}"`;
+      return `WARNING: Possible blocking event loop in row "${line}"
+          Vulnerability Prevention Recommendations: https://developer.mozilla.org/ru/docs/XMLHttpRequest`;
     });
   }
 }

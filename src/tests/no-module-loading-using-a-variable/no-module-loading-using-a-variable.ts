@@ -9,7 +9,8 @@ export class NoModuleLoadingUsingAVariable {
     const result = getResult(ast);
 
     return result.map(line => {
-      return `WARNING: Avoid module loading using a variable in row "${line}".`;
+      return `WARNING: Avoid module loading using a variable in row "${line}".
+          Vulnerability Prevention Recommendations: https://github.com/goldbergyoni/nodebestpractices/blob/security-best-practices-section/sections/security/safemoduleloading.md`;
     });
   }
 }

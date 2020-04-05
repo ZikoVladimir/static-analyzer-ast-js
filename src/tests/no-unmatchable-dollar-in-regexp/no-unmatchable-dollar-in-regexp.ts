@@ -9,7 +9,8 @@ export class NoUnmatchableDollarInRegexp {
     const result = getResult(ast);
 
     return result.map(line => {
-      return `Error: Unmatchable dollar in regular expression in row "${line}".`;
+      return `Error: Unmatchable dollar in regular expression in row "${line}".
+          Vulnerability Prevention Recommendations: https://help.semmle.com/wiki/display/JS/Unmatchable+dollar+in+regular+expression`;
     });
   }
 }

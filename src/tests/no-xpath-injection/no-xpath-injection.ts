@@ -9,7 +9,8 @@ export class NoXpathInjection {
     const result = getResult(ast);
 
     return result.map(line => {
-      return `Warning: Potential Xpath injection in row "${line}".`;
+      return `Warning: Potential Xpath injection in row "${line}".
+          Vulnerability Prevention Recommendations: https://help.semmle.com/wiki/display/JS/XPath+injection`;
     });
   }
 }

@@ -9,7 +9,8 @@ export class NoWith {
     const result = getResult(ast);
 
     return result.map(line => {
-      return `WARNING: Unexpected WithStatement in row "${line}"`;
+      return `WARNING: Unexpected WithStatement in row "${line}"
+          Vulnerability Prevention Recommendations: https://help.semmle.com/wiki/display/JS/With+statement`;
     });
   }
 }

@@ -9,7 +9,8 @@ export class NoXss {
     const result = getResult(ast);
 
     return result.map(line => {
-      return `Error: Client-side cross-site scripting in row "${line}".`;
+      return `Error: Client-side cross-site scripting in row "${line}".
+          Vulnerability Prevention Recommendations: https://help.semmle.com/wiki/display/JS/Client-side+cross-site+scripting`;
     });
   }
 }
