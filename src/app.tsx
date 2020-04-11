@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form } from './form/form';
-import { Loader } from './loader/loader';
-import { Result } from './result/result';
+import { Loader } from './shared/loader/loader';
+import { Result } from './shared/result/result';
 import { tests } from './tests/tests';
 import { TestsContext } from './app-context';
 import { usePath, useTests, useVisibility } from './app-hooks';

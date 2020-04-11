@@ -1,4 +1,4 @@
-@value NORMAL from "../colors.css";
+@value NORMAL from "../../colors.css";
 
 .result-container {
   position: absolute;
