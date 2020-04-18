@@ -4,7 +4,7 @@ import traverse from '@babel/traverse';
 export const getResult = (ast): number[] => {
   const result: number[] = [];
 
-  const regExp: RegExp = new RegExp(/[$]./g);
+  const regExp: RegExp = new RegExp(/[^\\][$]./g);
 
   traverse(ast, {
     CallExpression(path) {
