@@ -25,3 +25,10 @@
 .checkbox:last-child {
   margin: 0;
 }
+
+.github {
+  bottom: 25px;
+  max-width: 70px;
+  position: fixed;
+  right: 20px;
+}

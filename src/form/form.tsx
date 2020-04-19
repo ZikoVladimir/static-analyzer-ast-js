@@ -6,8 +6,9 @@ import { SAInput } from '../toolbox/sa-input/sa-input';
 import { SAButton } from '../toolbox/sa-button/sa-button';
 
 import { Checkboxes } from './checkboxes';
-import styles from './styles.module.css';
 import { showErrorMessage } from '../app-utils';
+import styles from './styles.module.css';
+import logo from './logo.png'
 
 interface Props {
   path: string;
@@ -37,6 +38,10 @@ export function Form(props: Props) {
                 disabled={props.disabled}>
         Запустить анализатор
       </SAButton>
+
+      <a href='https://github.com/ZikoVladimir/static-analyzer-ast-js/blob/master/src/js-samples/README.md' target='_blank'>
+        <img src={logo} alt='logo github' className={styles.github}/>
+      </a>
     </div>
   );
 }
