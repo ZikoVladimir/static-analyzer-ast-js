@@ -1,5 +1,3 @@
-// todo: implement reflected XSS, stored, no-stored XSS, etc.
-
 /**
  *
  * Name: Client-side cross-site scripting
