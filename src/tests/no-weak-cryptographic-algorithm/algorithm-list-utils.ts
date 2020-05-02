@@ -4,7 +4,6 @@ export const weakCryptoAlgorithmList: string[] = [
   'rc4',
   'rc2',
   'blowfish',
-  'ecb',
   'sha1',
   'des',
   '3des',
