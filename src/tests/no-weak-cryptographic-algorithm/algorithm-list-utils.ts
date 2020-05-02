@@ -1,14 +1,11 @@
-// todo: the list needs to be expanded
-
 export const weakCryptoAlgorithmList: string[] = [
   'md5',
+  'md4',
+  'rc4',
+  'rc2',
+  'blowfish',
+  'ecb',
   'sha1',
   'des',
-  '3des'
+  '3des',
 ];
-
-/*
-  MD5 - Use SHA512
-  SHA1 - Use SHA512
-  DES / 3DES - Use AES
-*/
