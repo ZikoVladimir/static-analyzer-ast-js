@@ -31,3 +31,12 @@ setInterval(function() {
 }, 100);
 
 /** MAIN CODE **/
+
+/**
+ *
+ * OUTPUT LOGS:
+ * WARNING: Use of implied eval in row "17"
+ * WARNING: Use of implied eval in row "19"
+ * WARNING: Use of implied eval in row "21"
+ *
+ **/

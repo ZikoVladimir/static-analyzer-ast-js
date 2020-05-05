@@ -29,3 +29,11 @@ document.getElementById('input').addEventListener('input', e => {
 const secureUploadHelpers = require('./helpers/upload');
 
 /** MAIN CODE **/
+
+/**
+ *
+ * OUTPUT LOGS:
+ * WARNING: Possible memory leak in row "18"
+ * WARNING: Avoid module loading using a variable in row "21"
+ *
+ **/

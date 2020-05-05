@@ -41,3 +41,12 @@ submit.addEventListener('click', () => {
 });
 
 /** MAIN CODE **/
+
+/**
+*
+* OUTPUT LOGS:
+* WARNING: Use of eval in row "39"
+* WARNING: Use of eval in row "40"
+* WARNING: Possible memory leak in row "38"
+*
+**/

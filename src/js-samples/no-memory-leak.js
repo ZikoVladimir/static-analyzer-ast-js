@@ -45,3 +45,12 @@ document.getElementById('submit').addEventListener('click', setText);
 document.getElementById('submit').removeEventListener('click', setText);
 
 /** MAIN CODE **/
+
+/**
+ *
+ * OUTPUT LOGS:
+ * WARNING: Possible memory leak in row "17"
+ * WARNING: Possible memory leak in row "21"
+ * WARNING: Possible memory leak in row "41"
+ *
+ **/

@@ -34,3 +34,11 @@ const { name } = user;
 const pass = mockMD5(name);
 
 /** MAIN CODE **/
+
+/**
+ *
+ * OUTPUT LOGS:
+ * WARNING: Unexpected WithStatement in row "25"
+ * WARNING: Possible memory leak in row "26"
+ *
+ **/

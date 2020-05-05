@@ -42,3 +42,10 @@ app.get('/some/route', function(req, res) {
 });
 
 /** MAIN CODE **/
+
+/**
+ *
+ * OUTPUT LOGS:
+ * Warning: Potential Xpath injection in row "25"
+ *
+ **/

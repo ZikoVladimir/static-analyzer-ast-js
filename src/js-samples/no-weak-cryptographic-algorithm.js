@@ -25,3 +25,10 @@ const aesCipher = crypto.createCipheriv('aes-128', key);
 const aesEncrypted = cipher.update(secretText, 'utf8', 'hex'); // GOOD: strong encryption
 
 /** MAIN CODE **/
+
+/**
+ *
+ * OUTPUT LOGS:
+ * WARNING: Use of a broken or weak cryptographic algorithm in row "19"
+ *
+ **/

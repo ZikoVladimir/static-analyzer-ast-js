@@ -22,3 +22,10 @@ function setLanguageOptions() {
 }
 
 /** MAIN CODE **/
+
+/**
+ *
+ * OUTPUT LOGS:
+ * Error: Client-side cross-site scripting in row "20"
+ *
+ **/

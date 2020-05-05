@@ -53,3 +53,11 @@ jQuery.ajax({
 });
 
 /** MAIN CODE **/
+
+/**
+ *
+ * OUTPUT LOGS:
+ * WARNING: Possible blocking event loop in row "37"
+ * WARNING: Possible blocking event loop in row "47"
+ *
+ **/

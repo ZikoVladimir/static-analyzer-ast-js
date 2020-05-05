@@ -19,3 +19,10 @@ if (file.match(/\.\(\w+$\)/)) {
 }
 
 /** MAIN CODE **/
+
+/**
+ *
+ * OUTPUT LOGS:
+ * Error: Unmatchable dollar in regular expression in row "17"
+ *
+ **/
