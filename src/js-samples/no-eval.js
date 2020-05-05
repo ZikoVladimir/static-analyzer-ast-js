@@ -35,6 +35,9 @@ const input = document.querySelector('input');
 
 const submit = document.querySelector('button');
 
-submit.addEventListener('click', () => eval(input.value));
+submit.addEventListener('click', () => {
+  window.eval(input.value); // incorrect
+  eval(input.value) // incorrect
+});
 
 /** MAIN CODE **/

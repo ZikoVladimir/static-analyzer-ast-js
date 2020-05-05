@@ -13,17 +13,16 @@
 
 /** MAIN CODE **/
 
-"use strict"
-
-function foo(arg) {
-  bar = "this is a hidden global variable";
+function createVariable(arg) {
+  variable = "this is a hidden global variable"; // if use strict - correct, else incorrect
 }
 
-function foo(arg) {
-  window.bar = "this is an explicit global variable";
+function createLeak(arg) {
+  window.leak = "this is an explicit global variable"; // if use strict - correct, else incorrect
 }
 
-foo();
+createLeak();
+createVariable();
 
 /** MAIN CODE **/
 

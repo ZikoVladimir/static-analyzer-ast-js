@@ -14,7 +14,7 @@
 
 // INCORRECT
 
-setTimeout("alert('It is not secure code!');", 100);
+setTimeout("alert('Not secure code!');", 100);
 
 window.setTimeout("location.href = 'http://example.com.hacker.com'", 100);
 
@@ -23,7 +23,11 @@ window.setInterval("alert(document.cookie)", 100);
 // CORRECT
 
 setTimeout(function() {
-  alert('It is secure code!');
+  alert('Secure code!');
+}, 100);
+
+setInterval(function() {
+  alert('Secure callback!');
 }, 100);
 
 /** MAIN CODE **/

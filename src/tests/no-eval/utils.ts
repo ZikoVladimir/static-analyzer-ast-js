@@ -3,7 +3,7 @@ import traverse from '@babel/traverse';
 
 const findEvalInArguments = argumentList => argumentList.find(arg => type.isIdentifier(arg, { name: 'eval' }));
 
-export const getResult = (ast): number[] => {
+export const  getResult = (ast): number[] => {
   const result: number[] = [];
 
   traverse(ast, {
@@ -14,7 +14,9 @@ export const getResult = (ast): number[] => {
     },
     CallExpression(path) {
       if (type.isIdentifier(path.node.callee, { name: 'eval' }) ||
-        (path.node.arguments && path.node.arguments.length && findEvalInArguments(path.node.arguments))) {
+        (path.node.arguments && path.node.arguments.length
+          && findEvalInArguments(path.node.arguments))
+      ) {
         result.push(path.node.loc.start.line);
       }
     }

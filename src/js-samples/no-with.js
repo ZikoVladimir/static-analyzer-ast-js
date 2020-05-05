@@ -20,6 +20,7 @@ const user = {
 
 const mockMD5 = password => `return hash password`;
 
+// Incorrect
 const createPassword = user => {
   with(user){
     password = mockMD5(name);
@@ -27,5 +28,9 @@ const createPassword = user => {
 };
 
 createPassword(user);
+
+// Correct
+const { name } = user;
+const pass = mockMD5(name);
 
 /** MAIN CODE **/

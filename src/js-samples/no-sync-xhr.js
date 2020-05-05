@@ -34,7 +34,10 @@ const state = {
 const setState = response => state.response = response;
 
 const request = new XMLHttpRequest();
-request.open('GET', '/open/users', false);  // `false` makes the request synchronous
+request.open('GET', '/open/users', false);  // `false` makes the request synchronous - Incorrect
+request.send(null);
+
+request.open('GET', '/open/users');  // correct
 request.send(null);
 
 if (request.status === 200) {
@@ -46,7 +49,7 @@ jQuery.ajax({
   success: function(response) {
     alert(response);
   },
-  async: false
+  async: false // incorrect
 });
 
 /** MAIN CODE **/
