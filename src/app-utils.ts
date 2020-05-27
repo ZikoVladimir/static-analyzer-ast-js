@@ -22,11 +22,17 @@ export function performAnalysis(path: string, tests: Test[]): string[] | null {
       showErrorMessage('Выбранный файл должен иметь расширение ".js"');
     } else {
       const file = fileService.readFile(path);
-      output = analyze(file, tests);
+
+      try {
+        output = analyze(file, tests);
+      } catch (e) {
+        showErrorMessage('Не удается преобразовать исходный код в синтаксическое дерево');
+        return;
+      }
+
       fileService.writeToFile(output);
     }
   } catch (e) {
-    console.log(e);
     showErrorMessage('Указан некорректный путь');
   }
 
