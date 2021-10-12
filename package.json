@@ -37,6 +37,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "electron": "^4.2.12"
+    "electron": "^11.5.0"
   }
 }
